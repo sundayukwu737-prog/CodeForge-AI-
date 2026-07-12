@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AI Project Generator | CodeForge AI</title>
+
+<link rel="stylesheet" href="css/project-generator.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<header>
+
+<nav>
+
+<div class="logo">
+
+<i class="fa-solid fa-code"></i>
+
+<h2>CodeForge AI</h2>
+
+</div>
+
+<a href="dashboard.html" class="backBtn">
+
+<i class="fa-solid fa-arrow-left"></i>
+
+Dashboard
+
+</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h1>
+
+AI Project Generator
+
+</h1>
+
+<p>
+
+Choose your favorite programming language and difficulty to generate your next software project.
+
+</p>
+
+</section>
+
+<section class="generator">
+
+<div class="controls">
+
+<div>
+
+<label>Programming Language</label>
+
+<select id="language">
+
+<option value="">Choose...</option>
+
+<option>HTML & CSS</option>
+
+<option>JavaScript</option>
+
+<option>Python</option>
+
+<option>C</option>
+
+<option>Java</option>
+
+<option>React</option>
+
+</select>
+
+</div>
+
+<div>
+
+<label>Difficulty</label>
+
+<select id="difficulty">
+
+<option value="">Choose...</option>
+
+<option>Beginner</option>
+
+<option>Intermediate</option>
+
+<option>Advanced</option>
+
+</select>
+
+</div>
+
+<button id="generateBtn">
+
+<i class="fa-solid fa-wand-magic-sparkles"></i>
+
+Generate Project
+
+</button>
+
+</div>
+
+<div id="resultCard" class="result">
+
+<h2>Your Project Idea</h2>
+
+<h3 id="projectTitle">
+
+Nothing generated yet...
+
+</h3>
+
+<p>
+
+<strong>Description:</strong>
+
+<span id="description">
+
+Choose your language and click Generate.
+
+</span>
+
+</p>
+
+<p>
+
+<strong>Estimated Time:</strong>
+
+<span id="time">
+
+--
+
+</span>
+
+</p>
+
+<p>
+
+<strong>Skills You'll Learn:</strong>
+
+<span id="skills">
+
+--
+
+</span>
+
+</p>
+
+<p>
+
+<strong>Difficulty:</strong>
+
+<span id="level">
+
+--
+
+</span>
+
+</p>
+
+<button id="favoriteBtn">
+
+⭐ Save as Favorite
+
+</button>
+
+</div>
+
+</section>
+
+<section class="favorites">
+
+<h2>
+
+Saved Favorites
+
+</h2>
+
+<ul id="favoriteList">
+
+</ul>
+
+</section>
+
+<footer>
+
+<p>
+
+© 2026 CodeForge AI
+
+</p>
+
+</footer>
+
+<script src="js/xp-system.js"></script>
+<script src="js/gemini.js"></script>
+<script src="js/project-generator.js"></script>
+
+</body>
+
+</html>

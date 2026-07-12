@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Developer Dashboard | CodeForge AI</title>
+
+<link rel="stylesheet" href="css/dashboard.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- ==========================
+     Sidebar
+========================== -->
+
+<aside class="sidebar">
+
+<div class="logo">
+
+<i class="fa-solid fa-code"></i>
+
+<h2>CodeForge AI</h2>
+
+</div>
+
+<ul>
+
+<li class="active">
+
+<a href="dashboard.html">
+
+<i class="fa-solid fa-house"></i>
+
+<span>Dashboard</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="project-generator.html">
+
+<i class="fa-solid fa-lightbulb"></i>
+
+<span>Projects</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="roadmap.html">
+
+<i class="fa-solid fa-route"></i>
+
+<span>Roadmap</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="resources.html">
+
+<i class="fa-solid fa-book"></i>
+
+<span>Resources</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="ai-assistant.html">
+
+<i class="fa-solid fa-robot"></i>
+
+<span>AI Assistant</span>
+
+</a>
+
+</li>
+
+<li>
+
+<a href="#" id="settingsLink">
+
+<i class="fa-solid fa-gear"></i>
+
+<span>Settings</span>
+
+</a>
+
+</li>
+
+</ul>
+
+</aside>
+
+<!-- ==========================
+     Main Content
+========================== -->
+
+<main class="main-content">
+
+<header class="topbar">
+
+<div>
+
+<h1>
+
+Welcome Back 👋
+
+</h1>
+
+<p>
+
+Keep building. Keep learning. Keep growing.
+
+</p>
+
+</div>
+
+<div class="profile">
+
+<i class="fa-solid fa-bell" id="bellIcon"></i>
+
+<img
+src="https://ui-avatars.com/api/?name=Developer&background=2563eb&color=fff"
+alt="Profile">
+
+</div>
+
+</header>
+
+<!-- ==========================
+     Statistics
+========================== -->
+
+<section class="stats">
+
+<div class="stat-card">
+
+<i class="fa-solid fa-fire"></i>
+
+<h2 id="streak">12</h2>
+
+<p>Day Streak</p>
+
+</div>
+
+<div class="stat-card">
+
+<i class="fa-solid fa-code"></i>
+
+<h2>47</h2>
+
+<p>Projects Built</p>
+
+</div>
+
+<div class="stat-card">
+
+<i class="fa-solid fa-clock"></i>
+
+<h2>286</h2>
+
+<p>Hours Coded</p>
+
+</div>
+
+<div class="stat-card">
+
+<i class="fa-solid fa-trophy"></i>
+
+<h2>15</h2>
+
+<p>Achievements</p>
+
+</div>
+
+</section>
+<!-- ==========================
+     Developer Profile
+========================== -->
+
+<section class="developer-profile">
+
+<div class="profile-card">
+
+<h2>Developer Profile</h2>
+
+<div class="profile-grid">
+
+<div class="profile-item">
+
+<h3>Level</h3>
+
+<h1 id="levelValue">Level 1</h1>
+
+</div>
+
+<div class="profile-item">
+
+<h3>Total XP</h3>
+
+<h1 id="xpValue">0 XP</h1>
+
+</div>
+
+<div class="profile-item">
+
+<h3>Streak</h3>
+
+<h1 id="streakValue">1</h1>
+
+</div>
+
+<div class="profile-item">
+
+<h3>Achievements</h3>
+
+<h1 id="achievementValue">0</h1>
+
+</div>
+
+</div>
+
+<div class="xp-bar">
+
+<div
+id="xpProgress"
+class="xp-fill">
+
+</div>
+
+</div>
+
+<p class="xp-text">
+
+Keep coding every day to reach the next level 🚀
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ==========================
+     Dashboard Grid
+========================== -->
+
+<section class="dashboard-grid">
+
+<!-- XP Progress -->
+
+<div class="panel">
+
+<h2>
+
+Level Progress
+
+</h2>
+
+<h3 id="currentLevel">
+
+Level 1 Developer
+
+</h3>
+
+<p id="xpSummary">
+
+0 / 100 XP
+
+</p>
+
+<div class="progress-bar">
+
+<div
+id="dashboardProgress"
+class="progress-fill">
+
+</div>
+
+</div>
+
+<p class="progress-text">
+
+Your coding journey has just begun!
+
+</p>
+
+</div>
+
+<!-- Weekly Challenge -->
+
+<div class="panel">
+
+<h2>
+
+Weekly Challenge
+
+</h2>
+
+<h3>
+
+Build a Responsive Portfolio Website
+
+</h3>
+
+<p>
+
+Difficulty:
+⭐⭐⭐☆☆
+
+</p>
+
+<p>
+
+Reward:
+<strong>+100 XP</strong>
+
+</p>
+
+<p>
+
+Deadline:
+Sunday
+
+</p>
+
+<button class="challenge-btn">
+
+Start Challenge
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ==========================
+     Daily Goals
+========================== -->
+
+<section class="panel">
+
+<h2>
+
+Today's Goals
+
+</h2>
+
+<label>
+
+<input type="checkbox">
+
+Complete one roadmap lesson
+
+</label>
+
+<br><br>
+
+<label>
+
+<input type="checkbox">
+
+Generate a new AI project
+
+</label>
+
+<br><br>
+
+<label>
+
+<input type="checkbox">
+
+Practice JavaScript for one hour
+
+</label>
+
+<br><br>
+
+<label>
+
+<input type="checkbox">
+
+Push changes to GitHub
+
+</label>
+
+</section>
+<!-- ==========================
+     Quick Actions
+========================== -->
+
+<section class="quick-actions">
+
+<h2>
+
+Quick Actions
+
+</h2>
+
+<div class="action-grid">
+
+<a href="project-generator.html" class="action-card">
+
+<i class="fa-solid fa-lightbulb"></i>
+
+<h3>Generate Project</h3>
+
+<p>Create a new coding project idea.</p>
+
+</a>
+
+<a href="roadmap.html" class="action-card">
+
+<i class="fa-solid fa-route"></i>
+
+<h3>Learning Roadmap</h3>
+
+<p>Continue your learning journey.</p>
+
+</a>
+
+<a href="resources.html" class="action-card">
+
+<i class="fa-solid fa-book"></i>
+
+<h3>Resources</h3>
+
+<p>Browse useful developer resources.</p>
+
+</a>
+
+<a href="ai-assistant.html" class="action-card">
+
+<i class="fa-solid fa-robot"></i>
+
+<h3>AI Assistant</h3>
+
+<p>Ask programming questions instantly.</p>
+
+</a>
+
+</div>
+
+</section>
+
+<!-- ==========================
+     Recent Activity
+========================== -->
+
+<section class="activity">
+
+<h2>
+
+Recent Activity
+
+</h2>
+
+<ul>
+
+<li>✅ Completed HTML Fundamentals Roadmap</li>
+
+<li>🔥 Maintained a 12-day coding streak</li>
+
+<li>🚀 Generated a new JavaScript project idea</li>
+
+<li>🤖 Asked the AI Assistant about CSS Grid</li>
+
+<li>📚 Saved new learning resources</li>
+
+</ul>
+
+</section>
+
+<!-- ==========================
+     Coding Activity
+========================== -->
+
+<section class="heatmap">
+
+<h2>
+
+Coding Activity
+
+</h2>
+
+<div class="heatmap-grid">
+
+<div class="box active"></div>
+<div class="box active"></div>
+<div class="box"></div>
+<div class="box active"></div>
+<div class="box active"></div>
+<div class="box"></div>
+<div class="box active"></div>
+
+<div class="box"></div>
+<div class="box active"></div>
+<div class="box active"></div>
+<div class="box"></div>
+<div class="box active"></div>
+<div class="box active"></div>
+<div class="box"></div>
+
+<div class="box active"></div>
+<div class="box"></div>
+<div class="box active"></div>
+<div class="box active"></div>
+<div class="box"></div>
+<div class="box active"></div>
+<div class="box active"></div>
+
+<div class="box"></div>
+<div class="box active"></div>
+<div class="box"></div>
+<div class="box active"></div>
+<div class="box active"></div>
+<div class="box"></div>
+<div class="box active"></div>
+
+</div>
+
+<p class="progress-text">
+
+More green squares mean more consistent coding.
+
+</p>
+
+</section>
+<!-- ==========================
+     Latest Achievements
+========================== -->
+
+<section class="achievements">
+
+<h2>
+
+Latest Achievements
+
+</h2>
+
+<div class="achievement-grid">
+
+<div class="achievement-card">
+
+🏅
+
+<h3>First Project</h3>
+
+<p>
+
+Completed your first coding project.
+
+</p>
+
+</div>
+
+<div class="achievement-card">
+
+🔥
+
+<h3>7-Day Streak</h3>
+
+<p>
+
+Maintained a seven-day coding streak.
+
+</p>
+
+</div>
+
+<div class="achievement-card">
+
+💎
+
+<h3>HTML Master</h3>
+
+<p>
+
+Completed the HTML learning roadmap.
+
+</p>
+
+</div>
+
+<div class="achievement-card">
+
+⚡
+
+<h3>JavaScript Explorer</h3>
+
+<p>
+
+Built your first JavaScript application.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ==========================
+     Developer Notes
+========================== -->
+
+<section class="notes">
+
+<h2>
+
+Developer Notes
+
+</h2>
+
+<textarea
+id="notes"
+placeholder="Write ideas, bugs, features or reminders here..."></textarea>
+
+<button id="saveNote">
+
+Save Notes
+
+</button>
+
+</section>
+
+<!-- ==========================
+     Footer
+========================== -->
+
+<footer>
+
+<p>
+
+© 2026 CodeForge AI • Built with ❤️ for Developers
+
+</p>
+
+</footer>
+
+</main>
+
+</div>
+
+<!-- XP System -->
+
+<script src="js/xp-system.js"></script>
+
+<!-- Dashboard Logic -->
+
+<script src="js/dashboard.js"></script>
+
+</body>
+
+</html>

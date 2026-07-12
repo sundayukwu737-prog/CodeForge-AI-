@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Assistant | CodeForge AI</title>
+<link rel="stylesheet" href="css/ai-assistant.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+
+<div class="container">
+
+<aside class="sidebar">
+<div class="logo">
+<i class="fa-solid fa-code"></i>
+<h2>CodeForge AI</h2>
+</div>
+<ul>
+<li><a href="dashboard.html"><i class="fa-solid fa-house"></i><span>Dashboard</span></a></li>
+<li><a href="project-generator.html"><i class="fa-solid fa-lightbulb"></i><span>AI Projects</span></a></li>
+<li><a href="roadmap.html"><i class="fa-solid fa-route"></i><span>Roadmap</span></a></li>
+<li><a href="resources.html"><i class="fa-solid fa-book"></i><span>Resources</span></a></li>
+<li class="active"><a href="ai-assistant.html"><i class="fa-solid fa-robot"></i><span>AI Assistant</span></a></li>
+</ul>
+</aside>
+
+<main class="main-content">
+
+<header class="topbar">
+<div>
+<h1>AI Assistant 🤖</h1>
+<p>Ask coding questions, generate ideas, and learn faster.</p>
+</div>
+<div class="status">
+<span class="online-dot"></span>
+AI Ready
+</div>
+</header>
+
+<section class="chat-container">
+<div class="chat-box" id="chatBox">
+<div class="message ai">
+<div class="avatar">🤖</div>
+<div class="bubble">Hello! I'm CodeForge AI. How can I help you today?</div>
+</div>
+</div>
+
+<section class="prompt-section">
+<h2>Quick Prompts</h2>
+<div class="prompt-grid">
+<button class="prompt-btn">💡 Generate Project Idea</button>
+<button class="prompt-btn">🐍 Teach Python</button>
+<button class="prompt-btn">⚡ Explain JavaScript</button>
+<button class="prompt-btn">🎨 Improve my HTML & CSS</button>
+<button class="prompt-btn">📚 Recommend Resources</button>
+<button class="prompt-btn">🐞 Help Debug My Code</button>
+</div>
+</section>
+
+<section class="chat-input-section">
+<div class="chat-input">
+<input type="text" id="userInput" placeholder="Ask CodeForge AI anything about programming...">
+<button id="sendBtn"><i class="fa-solid fa-paper-plane"></i> Send</button>
+</div>
+</section>
+
+<section class="features">
+<h2>What CodeForge AI Can Do</h2>
+<div class="feature-grid">
+<div class="feature-card">
+💡
+<h3>Generate Project Ideas</h3>
+<p>Get unique coding project ideas based on your skill level.</p>
+</div>
+<div class="feature-card">
+🐞
+<h3>Debug Code</h3>
+<p>Understand common HTML, CSS, JavaScript and Python errors.</p>
+</div>
+<div class="feature-card">
+📚
+<h3>Explain Concepts</h3>
+<p>Learn programming concepts with simple explanations.</p>
+</div>
+<div class="feature-card">
+🚀
+<h3>Learning Assistant</h3>
+<p>Receive study plans, coding tips and best practices.</p>
+</div>
+</div>
+</section>
+
+<section class="tips">
+<h2>Suggested Questions</h2>
+<ul>
+<li>How do I build a portfolio website?</li>
+<li>Explain JavaScript promises.</li>
+<li>Teach me Python loops.</li>
+<li>Create a React project idea.</li>
+<li>How do I prepare for coding interviews?</li>
+<li>Help me improve my CSS layouts.</li>
+</ul>
+</section>
+
+<footer>
+<p>© 2026 CodeForge AI • Your AI Coding Companion</p>
+</footer>
+
+</main>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="js/xp-system.js"></script>
+<script src="js/groq.js"></script>
+<script src="js/ai-assistant.js"></script>
+
+</body>
+</html>
