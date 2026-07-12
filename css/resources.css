@@ -1,0 +1,339 @@
+/* ==========================================
+   CodeForge AI
+   resources.css
+   Part 1
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#08111f;
+    color:#ffffff;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+/* Background */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    background:
+    radial-gradient(circle at top left,#2563eb33,transparent 40%),
+    radial-gradient(circle at bottom right,#7c3aed33,transparent 40%);
+    z-index:-1;
+}
+
+/* Navigation */
+
+nav{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    padding:25px 0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo i{
+    color:#4cc9f0;
+    font-size:2rem;
+}
+
+.logo h2{
+    font-size:1.5rem;
+}
+
+.back-btn{
+    text-decoration:none;
+    color:#fff;
+    background:#2563eb;
+    padding:12px 22px;
+    border-radius:50px;
+    transition:.3s;
+}
+
+.back-btn:hover{
+    background:#1d4ed8;
+    transform:translateY(-3px);
+}
+
+/* Hero */
+
+.hero{
+    width:90%;
+    max-width:900px;
+    margin:60px auto;
+    text-align:center;
+}
+
+.hero h1{
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.hero p{
+    color:#cbd5e1;
+}
+
+/* Search */
+
+.search-section{
+    width:90%;
+    max-width:700px;
+    margin:40px auto;
+}
+
+#searchInput{
+    width:100%;
+    padding:16px 20px;
+    border:none;
+    outline:none;
+    border-radius:14px;
+    background:#16233a;
+    color:#fff;
+    font-size:16px;
+}
+
+/* Resource Grid */
+
+.resources-grid{
+    width:90%;
+    max-width:1200px;
+    margin:50px auto;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:30px;
+}
+
+.resource-card{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    backdrop-filter:blur(15px);
+    transition:.3s;
+}
+
+.resource-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 35px rgba(37,99,235,.20);
+}
+
+.resource-card i{
+    font-size:3rem;
+    color:#4cc9f0;
+    margin-bottom:20px;
+}
+
+.resource-card h3{
+    margin-bottom:15px;
+}
+
+.resource-card p{
+    color:#cbd5e1;
+    margin-bottom:20px;
+}
+
+.favorite-btn{
+    background:#2563eb;
+    color:#fff;
+    border:none;
+    padding:12px 24px;
+    border-radius:12px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.favorite-btn:hover{
+    background:#1d4ed8;
+}
+/* ==========================================
+   CodeForge AI
+   resources.css
+   Part 2
+========================================== */
+
+/* ========= FAVORITES ========= */
+
+.favorites{
+    width:90%;
+    max-width:1200px;
+    margin:70px auto;
+}
+
+.favorites h2{
+    margin-bottom:25px;
+    color:#4cc9f0;
+}
+
+#favoriteList{
+    list-style:none;
+}
+
+#favoriteList li{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.08);
+    padding:18px;
+    margin-bottom:15px;
+    border-radius:15px;
+}
+
+/* ========= ACHIEVEMENTS ========= */
+
+.achievements{
+    width:90%;
+    max-width:1200px;
+    margin:80px auto;
+}
+
+.achievements h2{
+    text-align:center;
+    margin-bottom:35px;
+    color:#4cc9f0;
+}
+
+.badge-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.badge{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:20px;
+    padding:30px;
+    text-align:center;
+    font-size:2rem;
+    transition:.3s;
+}
+
+.badge p{
+    margin-top:15px;
+    font-size:1rem;
+}
+
+.badge:hover{
+    transform:translateY(-8px);
+    box-shadow:0 15px 35px rgba(37,99,235,.20);
+}
+
+/* ========= FOOTER ========= */
+
+footer{
+    margin-top:70px;
+    padding:30px;
+    text-align:center;
+    color:#94a3b8;
+    border-top:1px solid rgba(255,255,255,.08);
+}
+
+/* ========= ANIMATIONS ========= */
+
+@keyframes fadeUp{
+
+    from{
+        opacity:0;
+        transform:translateY(25px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.hero,
+.search-section,
+.resource-card,
+.favorites,
+.achievements{
+    animation:fadeUp .8s ease;
+}
+
+/* ========= SCROLLBAR ========= */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#08111f;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#2563eb;
+    border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background:#4cc9f0;
+}
+
+/* ========= RESPONSIVE ========= */
+
+@media(max-width:992px){
+
+    .resources-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .badge-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .hero h1{
+        font-size:2.2rem;
+    }
+
+    .resources-grid{
+        grid-template-columns:1fr;
+    }
+
+    .badge-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:480px){
+
+    .hero h1{
+        font-size:1.8rem;
+    }
+
+    .resource-card,
+    .badge{
+        padding:20px;
+    }
+
+    .favorite-btn{
+        width:100%;
+    }
+
+}
