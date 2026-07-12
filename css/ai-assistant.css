@@ -1,0 +1,726 @@
+/* ==========================================
+   CodeForge AI
+   AI Assistant
+   Part 1
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+:root{
+
+    --bg:#08111f;
+    --sidebar:#101c2d;
+    --card:#16233a;
+    --primary:#2563eb;
+    --secondary:#4cc9f0;
+    --text:#ffffff;
+    --muted:#b7c2d5;
+    --success:#22c55e;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    overflow-x:hidden;
+
+}
+
+/* Background */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    radial-gradient(circle at top left,#2563eb33,transparent 40%),
+    radial-gradient(circle at bottom right,#7c3aed33,transparent 40%);
+
+    z-index:-1;
+
+}
+
+/* Layout */
+
+.container{
+
+    display:flex;
+
+    min-height:100vh;
+
+}
+
+/* Sidebar */
+
+.sidebar{
+
+    width:270px;
+
+    position:fixed;
+
+    left:0;
+
+    top:0;
+
+    bottom:0;
+
+    padding:30px;
+
+    background:rgba(16,28,45,.95);
+
+    backdrop-filter:blur(20px);
+
+    border-right:1px solid rgba(255,255,255,.08);
+
+}
+
+.logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin-bottom:50px;
+
+}
+
+.logo i{
+
+    color:var(--secondary);
+
+    font-size:2rem;
+
+}
+
+.logo h2{
+
+    font-size:1.5rem;
+
+}
+
+.sidebar ul{
+
+    list-style:none;
+
+}
+
+.sidebar li{
+
+    margin:15px 0;
+
+}
+
+.sidebar a{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    padding:15px 18px;
+
+    text-decoration:none;
+
+    color:#fff;
+
+    border-radius:14px;
+
+    transition:.3s;
+
+}
+
+.sidebar a:hover,
+.sidebar .active a{
+
+    background:var(--primary);
+
+}
+
+/* Main */
+
+.main-content{
+
+    flex:1;
+
+    margin-left:270px;
+
+    padding:40px;
+
+}
+
+/* Topbar */
+
+.topbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:35px;
+
+}
+
+.topbar p{
+
+    color:var(--muted);
+
+    margin-top:8px;
+
+}
+
+/* Status */
+
+.status{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    background:var(--card);
+
+    padding:12px 18px;
+
+    border-radius:30px;
+
+}
+
+.online-dot{
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    background:var(--success);
+
+}
+/* ==========================================
+   CodeForge AI
+   AI Assistant
+   Part 2
+========================================== */
+
+/* ==========================
+   Chat Container
+========================== */
+
+.chat-container{
+
+    background:var(--card);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:24px;
+
+    padding:25px;
+
+    margin-bottom:35px;
+
+    min-height:500px;
+
+}
+
+.chat-box{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+    max-height:550px;
+
+    overflow-y:auto;
+
+    padding-right:10px;
+
+}
+
+/* ==========================
+   Messages
+========================== */
+
+.message{
+
+    display:flex;
+
+    gap:15px;
+
+    align-items:flex-start;
+
+}
+
+.avatar{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:1.4rem;
+
+    background:var(--primary);
+
+    flex-shrink:0;
+
+}
+
+.user .avatar{
+
+    background:#475569;
+
+}
+
+.bubble{
+
+    background:#0f172a;
+
+    border:1px solid rgba(255,255,255,.06);
+
+    padding:18px 20px;
+
+    border-radius:18px;
+
+    max-width:80%;
+
+    line-height:1.8;
+
+    color:var(--text);
+
+}
+
+/* ==========================
+   Quick Prompts
+========================== */
+
+.prompt-section{
+
+    margin-bottom:35px;
+
+}
+
+.prompt-section h2{
+
+    margin-bottom:20px;
+
+}
+
+.prompt-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:18px;
+
+}
+
+.prompt-btn{
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:18px;
+
+    border-radius:16px;
+
+    background:var(--card);
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.3s;
+
+    font-weight:600;
+
+}
+
+.prompt-btn:hover{
+
+    background:var(--primary);
+
+    transform:translateY(-4px);
+
+}
+
+/* ==========================
+   Chat Input
+========================== */
+
+.chat-input{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-bottom:40px;
+
+}
+
+.chat-input input{
+
+    flex:1;
+
+    border:none;
+
+    outline:none;
+
+    padding:18px 22px;
+
+    border-radius:14px;
+
+    background:var(--card);
+
+    color:white;
+
+    font-size:16px;
+
+}
+
+.chat-input input::placeholder{
+
+    color:var(--muted);
+
+}
+
+#sendBtn{
+
+    border:none;
+
+    cursor:pointer;
+
+    padding:18px 28px;
+
+    border-radius:14px;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+#sendBtn:hover{
+
+    background:#1d4ed8;
+
+    transform:translateY(-3px);
+
+}
+/* ==========================================
+   CodeForge AI
+   AI Assistant
+   Part 3
+========================================== */
+
+/* ==========================
+   Features
+========================== */
+
+.features{
+
+    margin:40px 0;
+
+}
+
+.features h2{
+
+    margin-bottom:25px;
+
+}
+
+.feature-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:25px;
+
+}
+
+.feature-card{
+
+    background:var(--card);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    padding:30px;
+
+    text-align:center;
+
+    transition:.3s;
+
+}
+
+.feature-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 15px 35px rgba(37,99,235,.20);
+
+}
+
+.feature-card h3{
+
+    margin:15px 0 10px;
+
+}
+
+.feature-card p{
+
+    color:var(--muted);
+
+    line-height:1.7;
+
+}
+
+/* ==========================
+   Tips
+========================== */
+
+.tips{
+
+    margin:40px 0;
+
+}
+
+.tips h2{
+
+    margin-bottom:20px;
+
+}
+
+.tips ul{
+
+    list-style:none;
+
+    background:var(--card);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    padding:25px;
+
+}
+
+.tips li{
+
+    padding:12px 0;
+
+    color:var(--muted);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.tips li:last-child{
+
+    border-bottom:none;
+
+}
+
+/* ==========================
+   Footer
+========================== */
+
+footer{
+
+    margin-top:50px;
+
+    padding:30px 0;
+
+    text-align:center;
+
+    color:var(--muted);
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+/* ==========================
+   Scrollbars
+========================== */
+
+.chat-box::-webkit-scrollbar,
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+.chat-box::-webkit-scrollbar-track,
+::-webkit-scrollbar-track{
+
+    background:#08111f;
+
+}
+
+.chat-box::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:20px;
+
+}
+
+.chat-box::-webkit-scrollbar-thumb:hover,
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--secondary);
+
+}
+
+/* ==========================
+   Animations
+========================== */
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+.chat-container,
+.prompt-section,
+.features,
+.tips{
+
+    animation:fadeUp .8s ease;
+
+}
+
+/* ==========================
+   Responsive
+========================== */
+
+@media(max-width:1100px){
+
+    .prompt-grid{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+
+    .feature-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
+@media(max-width:900px){
+
+    .container{
+
+        flex-direction:column;
+
+    }
+
+    .sidebar{
+
+        position:relative;
+
+        width:100%;
+
+        height:auto;
+
+    }
+
+    .main-content{
+
+        margin-left:0;
+
+    }
+
+}
+
+@media(max-width:600px){
+
+    .topbar{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:20px;
+
+    }
+
+    .prompt-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .chat-input{
+
+        flex-direction:column;
+
+    }
+
+    #sendBtn{
+
+        width:100%;
+
+    }
+
+    .bubble{
+
+        max-width:100%;
+
+    }
+
+}
